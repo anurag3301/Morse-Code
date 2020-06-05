@@ -1,5 +1,45 @@
 import simpleaudio as sa
 
+code = {'A':'.-',
+        'B':'-...',
+        'C':'-.-.',
+        'D':'-..',
+        'E':'.',
+        'F':'..-.',
+        'G':'--.',
+        'H':'....',
+        'I':'..',
+        'J':'.---',
+        'K':'-.-',
+        'L':'.-..',
+        'M':'--',
+        'N':'-.',
+        'O':'---',
+        'P':'.--.',
+        'Q':'--.-',
+        'R':'.-.',
+        'S':'...',
+        'T':'-',
+        'U':'..-',
+        'V':'...-',
+        'W':'.--',
+        'X':'-..-',
+        'Y':'-.--',
+        'Z':'--..',
+        '1':'.----',
+        '2':'..---',
+        '3':'...--',
+        '4':'....-',
+        '5':'.....',
+        '6':'-....',
+        '7':'--...',
+        '8':'---..',
+        '9':'----.',
+        '0':'-----',}
+
+alpha_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
+              'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8',
+              '9', ' ']
 
 def morse_to_alphanumeric(morse):
     check = True
@@ -9,79 +49,10 @@ def morse_to_alphanumeric(morse):
 
     if check:
         def morse_to_char(morse):
-            if morse == '.-':
-                return 'A'
-            if morse == '-...':
-                return 'B'
-            if morse == '-.-.':
-                return 'C'
-            if morse == '-..':
-                return 'D'
-            if morse == '.':
-                return 'E'
-            if morse == '..-.':
-                return 'F'
-            if morse == '--.':
-                return 'G'
-            if morse == '....':
-                return 'H'
-            if morse == '..':
-                return 'I'
-            if morse == '.---':
-                return 'J'
-            if morse == '-.-':
-                return 'K'
-            if morse == '.-..':
-                return 'L'
-            if morse == '--':
-                return 'M'
-            if morse == '-.':
-                return 'N'
-            if morse == '---':
-                return 'O'
-            if morse == '.--.':
-                return 'P'
-            if morse == '--.-':
-                return 'Q'
-            if morse == '.-.':
-                return 'R'
-            if morse == '...':
-                return 'S'
-            if morse == '-':
-                return 'T'
-            if morse == '..-':
-                return 'U'
-            if morse == '...-':
-                return 'V'
-            if morse == '.--':
-                return 'W'
-            if morse == '-..-':
-                return 'X'
-            if morse == '-.--':
-                return 'Y'
-            if morse == '--..':
-                return 'Z'
-
-            if morse == '-----':
-                return '0'
-            if morse == '.----':
-                return '1'
-            if morse == '..---':
-                return '2'
-            if morse == '...--':
-                return '3'
-            if morse == '....-':
-                return '4'
-            if morse == '.....':
-                return '5'
-            if morse == '-....':
-                return '6'
-            if morse == '--...':
-                return '7'
-            if morse == '---..':
-                return '8'
-            if morse == '----.':
-                return '9'
+            global alpha_list, code
+            for i in alpha_list:
+                if morse == code[i]:
+                    return i
 
         k = 0
         message = ''
@@ -111,10 +82,6 @@ def morse_to_alphanumeric(morse):
 
 
 def alpha_to_morse(message):
-    alpha_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-                  'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
-                  'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8',
-                  '9', ' ']
     check = True
 
     for i in message:
@@ -128,57 +95,57 @@ def alpha_to_morse(message):
     if check:
         morse = ''
         for i in range(len(message)):
-            if message[i] == 'a' or message[i] == 'A':
+            if message[i] == 'A':
                 morse += '.-'
-            if message[i] == 'b' or message[i] == 'B':
+            if message[i] == 'B':
                 morse += '-...'
-            if message[i] == 'c' or message[i] == 'C':
+            if message[i] == 'C':
                 morse += '-.-.'
-            if message[i] == 'd' or message[i] == 'D':
+            if message[i] == 'D':
                 morse += '-..'
-            if message[i] == 'e' or message[i] == 'E':
+            if message[i] == 'E':
                 morse += '.'
-            if message[i] == 'f' or message[i] == 'F':
+            if message[i] == 'F':
                 morse += '..-.'
-            if message[i] == 'g' or message[i] == 'G':
+            if message[i] == 'G':
                 morse += '--.'
-            if message[i] == 'h' or message[i] == 'H':
+            if message[i] == 'H':
                 morse += '....'
-            if message[i] == 'i' or message[i] == 'I':
+            if message[i] == 'I':
                 morse += '..'
-            if message[i] == 'j' or message[i] == 'J':
+            if message[i] == 'J':
                 morse += '.---'
-            if message[i] == 'k' or message[i] == 'K':
+            if message[i] == 'K':
                 morse += '-.-'
-            if message[i] == 'l' or message[i] == 'L':
+            if message[i] == 'L':
                 morse += '.-..'
-            if message[i] == 'm' or message[i] == 'M':
+            if message[i] == 'M':
                 morse += '--'
-            if message[i] == 'n' or message[i] == 'N':
+            if message[i] == 'N':
                 morse += '-.'
-            if message[i] == 'o' or message[i] == 'O':
+            if message[i] == 'O':
                 morse += '---'
-            if message[i] == 'p' or message[i] == 'P':
+            if message[i] == 'P':
                 morse += '.--.'
-            if message[i] == 'q' or message[i] == 'Q':
+            if message[i] == 'Q':
                 morse += '--.-'
-            if message[i] == 'r' or message[i] == 'R':
+            if message[i] == 'R':
                 morse += '.-.'
-            if message[i] == 's' or message[i] == 'S':
+            if message[i] == 'S':
                 morse += '...'
-            if message[i] == 't' or message[i] == 'T':
+            if message[i] == 'T':
                 morse += '-'
-            if message[i] == 'u' or message[i] == 'U':
+            if message[i] == 'U':
                 morse += '..-'
-            if message[i] == 'v' or message[i] == 'V':
+            if message[i] == 'V':
                 morse += '...-'
-            if message[i] == 'w' or message[i] == 'W':
+            if message[i] == 'W':
                 morse += '.--'
-            if message[i] == 'x' or message[i] == 'X':
+            if message[i] == 'X':
                 morse += '-..-'
-            if message[i] == 'y' or message[i] == 'Y':
+            if message[i] == 'Y':
                 morse += '-.--'
-            if message[i] == 'z' or message[i] == 'Z':
+            if message[i] == 'Z':
                 morse += '--..'
 
             if message[i] == '0':
@@ -209,19 +176,20 @@ def alpha_to_morse(message):
     return 'Only Alphabets and Numbers are accepted'
 
 
+dat_sound = sa.WaveObject.from_wave_file("dat.wav")
+dit_sound = sa.WaveObject.from_wave_file("dit.wav")
+space_sound = sa.WaveObject.from_wave_file("space.wav")
+
 def morse_play(morse):
     for i in morse:
         if i == '-':
-            wave_obj = sa.WaveObject.from_wave_file("dat.wav")
-            play_obj = wave_obj.play()
-            play_obj.wait_done()
+            dat_play = dat_sound.play()
+            dat_play.wait_done()
 
         if i == '.':
-            wave_obj = sa.WaveObject.from_wave_file("dit.wav")
-            play_obj = wave_obj.play()
-            play_obj.wait_done()
+            dit_play = dit_sound.play()
+            dit_play.wait_done()
 
         if i == ' ':
-            wave_obj = sa.WaveObject.from_wave_file("space.wav")
-            play_obj = wave_obj.play()
-            play_obj.wait_done()
+            space_play = space_sound.play()
+            space_play.wait_done()

@@ -7,7 +7,7 @@ while True:
     choice = int(input('1. AlphaNumeric to Morse\n2. Morse to AlphaNumeric'))
     if choice == 1:
         message = str(input('Enter the messsage: '))
-        morse = f.alpha_to_morse(message)
+        morse = f.alpha_to_morse(message.upper())
         print('Morse Code: ', morse)
         choice = input("Play the morse (y/n)")
         if choice == 'y' or choice == 'Y':
@@ -30,13 +30,13 @@ def morse(morse):
 
 def alpha(alpha):
     output_text.delete('1.0', tk.END)
-    morse = f.alpha_to_morse(alpha)
+    morse = f.alpha_to_morse(alpha.upper())
     output_text.insert(1.0, morse)
 
 
 def play(alpha):
     output_text.delete('1.0', tk.END)
-    morse = f.alpha_to_morse(alpha)
+    morse = f.alpha_to_morse(alpha.upper())
     output_text.insert(1.0, morse)
     f.morse_play(morse)
 
