@@ -164,12 +164,14 @@ def alpha_to_morse(message):
 
     if check:
         morse = ''
+        index = 0
         for i in message:
             for j in code:
                 if i == j:
                     morse += code[j]
                     break
-            morse += ' '
+            morse += ' ' if index < len(message)-1 else ''
+            index += 1
         return morse
 
     return 'Only Alphabets and Numbers are accepted'
