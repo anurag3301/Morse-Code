@@ -49,79 +49,11 @@ def morse_to_alphanumeric(morse):
 
     if check:
         def morse_to_char(morse):
-            if morse == '.-':
-                return 'A'
-            if morse == '-...':
-                return 'B'
-            if morse == '-.-.':
-                return 'C'
-            if morse == '-..':
-                return 'D'
-            if morse == '.':
-                return 'E'
-            if morse == '..-.':
-                return 'F'
-            if morse == '--.':
-                return 'G'
-            if morse == '....':
-                return 'H'
-            if morse == '..':
-                return 'I'
-            if morse == '.---':
-                return 'J'
-            if morse == '-.-':
-                return 'K'
-            if morse == '.-..':
-                return 'L'
-            if morse == '--':
-                return 'M'
-            if morse == '-.':
-                return 'N'
-            if morse == '---':
-                return 'O'
-            if morse == '.--.':
-                return 'P'
-            if morse == '--.-':
-                return 'Q'
-            if morse == '.-.':
-                return 'R'
-            if morse == '...':
-                return 'S'
-            if morse == '-':
-                return 'T'
-            if morse == '..-':
-                return 'U'
-            if morse == '...-':
-                return 'V'
-            if morse == '.--':
-                return 'W'
-            if morse == '-..-':
-                return 'X'
-            if morse == '-.--':
-                return 'Y'
-            if morse == '--..':
-                return 'Z'
+            global code
+            for i in code:
+                if code[i]==morse:
+                    return i
 
-            if morse == '-----':
-                return '0'
-            if morse == '.----':
-                return '1'
-            if morse == '..---':
-                return '2'
-            if morse == '...--':
-                return '3'
-            if morse == '....-':
-                return '4'
-            if morse == '.....':
-                return '5'
-            if morse == '-....':
-                return '6'
-            if morse == '--...':
-                return '7'
-            if morse == '---..':
-                return '8'
-            if morse == '----.':
-                return '9'
 
         k = 0
         message = ''

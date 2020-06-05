@@ -16,37 +16,41 @@ while True:
     if choice == 2:
         morse = input("Enter the morse code: ")
         message = f.morse_to_alphanumeric(morse)
-        print(message)
-        
+        print(message)  
 '''
+
 
 # below code is for GUI
 
-def morse(morse):
-    output_text.delete('1.0', tk.END)
-    alpha = f.morse_to_alphanumeric(morse)
-    output_text.insert(1.0, alpha)
+
+def morse(morse):                           #function called when 'Morse → AlphaNumeric' button is pressed
+    output_text.delete('1.0', tk.END)       #Clear output section
+    alpha = f.morse_to_alphanumeric(morse)  #calling the conversion function
+    output_text.insert(1.0, alpha)          #Display the output
 
 
-def alpha(alpha):
-    output_text.delete('1.0', tk.END)
-    morse = f.alpha_to_morse(alpha.upper())
-    output_text.insert(1.0, morse)
+def alpha(alpha):                           #function called when 'AlphaNumeric → Morse' button is pressed
+    output_text.delete('1.0', tk.END)       #Clear output section
+    morse = f.alpha_to_morse(alpha.upper()) #calling the conversion function
+    output_text.insert(1.0, morse)          #Display the output
 
 
-def play(alpha):
-    output_text.delete('1.0', tk.END)
-    morse = f.alpha_to_morse(alpha.upper())
-    output_text.insert(1.0, morse)
-    f.morse_play(morse)
+def play(alpha):                            #function called when 'Play Morse' button is pressed
+    output_text.delete('1.0', tk.END)       #Clear output section
+    morse = f.alpha_to_morse(alpha.upper()) #calling the conversion function
+    output_text.insert(1.0, morse)          #Display the output
+    f.morse_play(morse)                     #calling the morse play function
 
 
+#create the tkinter window
 root = tk.Tk()
 
+#created GUI widgets
 canvas = tk.Canvas(root, height=650, width=750)
 head_label = tk.Label(canvas, text='Morse Converter', font=('verdana', 25))
 notice_frame = tk.Frame(canvas, height=200, width=550, bd=10, bg='#a0a0a0')
-input_notice1 = tk.Label(notice_frame, text='The input is accepted in Morse or Alpha-Numeric.', bg='#a0a0a0', font=('verdana', 10))
+input_notice1 = tk.Label(notice_frame, text='The input is accepted in Morse or Alpha-Numeric.', bg='#a0a0a0',
+                         font=('verdana', 10))
 input_notice2 = tk.Label(notice_frame,
                          text='If input is in morse then leave one space between each character and two space between each word.',
                          bg='#a0a0a0', font=('verdana', 10))
@@ -61,6 +65,8 @@ alpha_morse_button = tk.Button(canvas, text='AlphaNumeric → Morse', font=('ver
 play_button = tk.Button(canvas, text='Play\nMorse', font=('verdana', 15), height=3,
                         command=lambda: play(input_entry.get()))
 
+
+#placing the GUI widgets
 canvas.pack()
 head_label.place(y=2, relx=0.35)
 notice_frame.place(y=55, x=25)
